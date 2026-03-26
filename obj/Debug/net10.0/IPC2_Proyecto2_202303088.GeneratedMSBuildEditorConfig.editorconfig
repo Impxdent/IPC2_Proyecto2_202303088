@@ -22,12 +22,20 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
+[C:/Users/André/Desktop/IPC2_Proyecto2_202303088/Pages/Drones.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRHJvbmVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/André/Desktop/IPC2_Proyecto2_202303088/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/André/Desktop/IPC2_Proyecto2_202303088/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/André/Desktop/IPC2_Proyecto2_202303088/Pages/Mensajes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVuc2FqZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/André/Desktop/IPC2_Proyecto2_202303088/Pages/Privacy.cshtml]
@@ -38,28 +46,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/André/Desktop/IPC2_Proyecto2_202303088/Pages/Sistemas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lzdGVtYXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/André/Desktop/IPC2_Proyecto2_202303088/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/André/Desktop/IPC2_Proyecto2_202303088/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/André/Desktop/IPC2_Proyecto2_202303088/Paginas/Drones.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnaW5hc1xEcm9uZXMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/André/Desktop/IPC2_Proyecto2_202303088/Paginas/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnaW5hc1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/André/Desktop/IPC2_Proyecto2_202303088/Paginas/Mensajes.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnaW5hc1xNZW5zYWplcy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/André/Desktop/IPC2_Proyecto2_202303088/Paginas/Sistemas.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnaW5hc1xTaXN0ZW1hcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/André/Desktop/IPC2_Proyecto2_202303088/Pages/Shared/_Layout.cshtml]
