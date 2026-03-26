@@ -1,0 +1,14 @@
+﻿@page
+@model IPC2_Proyecto2_202303088.Pages.IndexModel
+
+<h1>Cargar Archivo XML</h1>
+
+<form method="post" enctype="multipart/form-data">
+    <input type="file" name="archivo" />
+    <button type="submit">Cargar</button>
+</form>
+
+@if (Model.Mensaje != null)
+{
+    <p>@Model.Mensaje</p>
+}
