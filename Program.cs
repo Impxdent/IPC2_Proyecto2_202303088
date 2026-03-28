@@ -1,20 +1,21 @@
 var builder = WebApplication.CreateBuilder(args);
 
-// Agregar Razor Pages
-builder.Services.AddRazorPages();
+builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-// Configuración del pipeline
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Error");
+    app.UseExceptionHandler("/Home/Error");
 }
 
 app.UseStaticFiles();
 
 app.UseRouting();
 
-app.MapRazorPages();
+//uso de rutas mvc
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

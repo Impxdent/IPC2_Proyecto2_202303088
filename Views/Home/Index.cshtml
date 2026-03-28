@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<h1>Cargar XML</h1>
+
+<form method="post" enctype="multipart/form-data" asp-action="Cargar">
+    <input type="file" name="archivo" />
+    <button type="submit">Cargar</button>
+</form>
+
+@if (ViewBag.Mensaje != null)
+{
+    <p>@ViewBag.Mensaje</p>
+}
