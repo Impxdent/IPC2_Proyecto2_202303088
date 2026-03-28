@@ -11,5 +11,29 @@ namespace IPC2_Proyecto2_202303088.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Cargar(IFormFile archivo)
+        {
+            if (archivo != null)
+            {
+                string ruta = Path.Combine(Directory.GetCurrentDirectory(), "temp.xml");
+
+                using (var stream = new FileStream(ruta, FileMode.Create))
+                {
+                    archivo.CopyTo(stream);
+                }
+
+                servicio.CargarXML(ruta);
+
+                ViewBag.Mensaje = "Archivo cargado correctamente";
+            }
+            else
+            {
+                ViewBag.Mensaje = "Error, debe seleccionar un archivo";
+            }
+
+            return View("Index");
+        }
     }
 }
