@@ -1,0 +1,26 @@
+@model IPC2_Proyecto2_202303088.Estructuras.ListaSimple
+
+<h1>Lista de Sistemas</h1>
+
+<table border="1">
+    <tr>
+        <th>Nombre</th>
+        <th>Altura Máxima</th>
+    </tr>
+
+@{
+    var actual = Model.ObtenerCabeza();
+
+    while (actual != null)
+    {
+        var sistema = (IPC2_Proyecto2_202303088.Modelos.SistemaDrones)actual.Dato;
+
+        <tr>
+            <td>@sistema.Nombre</td>
+            <td>@sistema.AlturaMaxima</td>
+        </tr>
+
+        actual = actual.Siguiente;
+    }
+}
+</table>
