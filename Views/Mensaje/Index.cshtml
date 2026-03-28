@@ -1,0 +1,36 @@
+@model IPC2_Proyecto2_202303088.Estructuras.ListaSimple
+
+<h1>Lista de Mensajes</h1>
+
+<table border="1">
+    <tr>
+        <th>Nombre</th>
+        <th>Sistema</th>
+        <th>Acción</th>
+    </tr>
+
+@{
+    var actual = Model.ObtenerCabeza();
+
+    while (actual != null)
+    {
+        var mensaje = (IPC2_Proyecto2_202303088.Modelos.Mensaje)actual.Dato;
+    <tr>
+        <td>@mensaje.Nombre</td>
+        <td>@mensaje.Sistema</td>
+        <td>
+            <a href="/Mensaje/Detalle?nombre=@mensaje.Nombre">
+                <button>Ver Detalle</button>
+            </a>
+        </td>
+    </tr>
+        actual = actual.Siguiente;
+    }
+}
+</table>
+
+<br /><br />
+
+<a href="/Home">
+    <button type="button">Volver al Menú</button>
+</a>

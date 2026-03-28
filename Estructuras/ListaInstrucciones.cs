@@ -28,7 +28,7 @@ namespace IPC2_Proyecto2_202303088.Estructuras
             while (actual != null)
             {
                 Instruccion inst = (Instruccion)actual.Dato;
-                Console.WriteLine("Dron: " + inst.NombreDron + 
+                Console.WriteLine("Dron: " + inst.Dron + 
                                   " - Altura: " + inst.Altura);
                 actual = actual.Siguiente;
             }

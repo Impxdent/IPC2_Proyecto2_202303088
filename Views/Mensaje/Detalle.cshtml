@@ -1,0 +1,31 @@
+@model IPC2_Proyecto2_202303088.Modelos.Mensaje
+
+<h1>Detalle del Mensaje</h1>
+
+<p><strong>Nombre:</strong> @Model.Nombre</p>
+<p><strong>Sistema:</strong> @Model.Sistema</p>
+
+<h2>Instrucciones</h2>
+
+<ul>
+@{
+    var actual = Model.Instrucciones.ObtenerCabeza();
+
+    while (actual != null)
+    {
+        var inst = (IPC2_Proyecto2_202303088.Modelos.Instruccion)actual.Dato;
+        <li>Dron: @inst.Dron → Altura: @inst.Altura</li>
+        actual = actual.Siguiente;
+    }
+}
+</ul>
+
+<br /><br />
+
+<a href="/Mensaje">
+    <button type="button">Volver</button>
+</a>
+
+<a href="/Home">
+    <button type="button">Menú Principal</button>
+</a>
