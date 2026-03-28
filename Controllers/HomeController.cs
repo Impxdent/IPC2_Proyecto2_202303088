@@ -17,6 +17,8 @@ namespace IPC2_Proyecto2_202303088.Controllers
         {
             if (archivo != null)
             {
+                Console.WriteLine("Archivo recibido: " + archivo.FileName); 
+
                 string ruta = Path.Combine(Directory.GetCurrentDirectory(), "temp.xml");
 
                 using (var stream = new FileStream(ruta, FileMode.Create))
@@ -30,6 +32,7 @@ namespace IPC2_Proyecto2_202303088.Controllers
             }
             else
             {
+                Console.WriteLine("Archivo es NULL"); 
                 ViewBag.Mensaje = "Error, debe seleccionar un archivo";
             }
 

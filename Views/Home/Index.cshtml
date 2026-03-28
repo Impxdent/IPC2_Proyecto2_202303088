@@ -4,10 +4,21 @@
 
 <h1>Cargar XML</h1>
 
-<form method="post" enctype="multipart/form-data" asp-action="Cargar">
+<form method="post" action="/Home/Cargar" enctype="multipart/form-data">
+    
     <input type="file" name="archivo" />
+
+    <br /><br />
+
     <button type="submit">Cargar</button>
+
 </form>
+
+<br /><br />
+
+<a href="/Dron">
+    <button type="button">Ver Drones</button>
+</a>
 
 @if (ViewBag.Mensaje != null)
 {

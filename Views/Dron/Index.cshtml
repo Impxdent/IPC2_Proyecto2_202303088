@@ -1,0 +1,24 @@
+@model IPC2_Proyecto2_202303088.Estructuras.ListaDrones
+
+<h1>Lista de Drones</h1>
+
+<table border="1">
+    <tr>
+        <th>Nombre</th>
+    </tr>
+
+@{
+    var actual = Model.ObtenerCabeza();
+
+    while (actual != null)
+    {
+        var dron = (IPC2_Proyecto2_202303088.Modelos.Dron)actual.Dato;
+
+        <tr>
+            <td>@dron.Nombre</td>
+        </tr>
+
+        actual = actual.Siguiente;
+    }
+}
+</table>
