@@ -1,0 +1,11 @@
+digraph G {
+  rankdir=LR;
+  node [shape=box, style=filled, color=lightgreen];
+  M [label="Mensaje: Mensaje1"];
+  I0 [label="DronA\nAlt: 1"];
+  M -> I0;
+  I1 [label="DronB\nAlt: 2"];
+  I0 -> I1;
+  I2 [label="DronA\nAlt: 3"];
+  I1 -> I2;
+}

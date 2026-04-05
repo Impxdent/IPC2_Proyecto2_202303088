@@ -2,8 +2,13 @@
 
 <h1>Detalle del Mensaje</h1>
 
-<p><strong>Nombre:</strong> @Model.Nombre</p>
-<p><strong>Sistema:</strong> @Model.Sistema</p>
+<div style="background-color: #f4f4f9; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+    <p><strong>Nombre:</strong> @Model.Nombre</p>
+    <p><strong>Sistema:</strong> @Model.Sistema</p>
+    
+    <p><strong>Tiempo Óptimo Calculado:</strong> @ViewBag.TiempoOptimo segundos</p>
+    <p><strong>Mensaje Descifrado:</strong> <span style="color: #d9534f; font-weight: bold; font-size: 1.2em;">@ViewBag.MensajeDescifrado</span></p>
+</div>
 
 <h2>Instrucciones</h2>
 
@@ -14,7 +19,9 @@
     while (actual != null)
     {
         var inst = (IPC2_Proyecto2_202303088.Modelos.Instruccion)actual.Dato;
-        <li>Dron: @inst.Dron → Altura: @inst.Altura</li>
+        
+        <li>Dron: @inst.Dron &rarr; Altura: @inst.Altura</li>
+        
         actual = actual.Siguiente;
     }
 }
@@ -22,10 +29,18 @@
 
 <br /><br />
 
-<a href="/Mensaje">
-    <button type="button">Volver</button>
-</a>
+<h2>Gráfica de Instrucciones</h2>
+@if (ViewBag.RutaImagen != null)
+{
+    <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 20px; text-align: center;">
+        <img src="@ViewBag.RutaImagen?t=@DateTime.Now.Ticks" alt="Gráfica de Instrucciones" style="max-width: 100%; border: 1px solid black;" />
+        <br />
+        <small>Ruta detectada: @ViewBag.RutaImagen</small>
+    </div>
+}
 
-<a href="/Home">
-    <button type="button">Menú Principal</button>
+<br /><br />
+
+<a href="/Mensaje">
+    <button>Volver</button>
 </a>
