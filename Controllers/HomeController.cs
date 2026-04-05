@@ -7,7 +7,6 @@ namespace IPC2_Proyecto2_202303088.Controllers
 {
     public class HomeController : Controller
     {
-        // Tu variable global original
         public static XmlEntrada servicio = new XmlEntrada();
 
         public IActionResult Index()
@@ -15,29 +14,33 @@ namespace IPC2_Proyecto2_202303088.Controllers
             return View();
         }
 
+        public IActionResult CargarArchivo()
+        {
+            return View();
+        }
+
         [HttpPost]
-        public IActionResult Cargar()
+        public IActionResult ProcesarArchivo()
         {
             var archivoXml = Request.Form.Files.FirstOrDefault();
+
             if (archivoXml != null && archivoXml.Length > 0)
             {
                 string rutaTemporal = Path.GetTempFileName();
-                
                 using (var stream = new FileStream(rutaTemporal, FileMode.Create))
                 {
                     archivoXml.CopyTo(stream);
                 }
                 
                 servicio.CargarXML(rutaTemporal); 
-                
-                ViewBag.Mensaje = "El archivo fue cargado exitosamente";
+                ViewBag.Mensaje = "¡Archivo cargado correctamente!";
             }
             else
             {
-                ViewBag.Mensaje = "Error, seleccione un archivo valido";
+                ViewBag.Mensaje = "Error: Seleccione un archivo.";
             }
 
-            return View("Index");
+            return View("CargarArchivo"); 
         }
 
         [HttpGet]
@@ -45,17 +48,20 @@ namespace IPC2_Proyecto2_202303088.Controllers
         {
             if (servicio.ListaMensajes == null || servicio.ListaMensajes.Contar() == 0)
             {
-                ViewBag.Mensaje = "No hay datos para generar el archivo. Carga un XML primero.";
-                return View("Index");
+                ViewBag.Mensaje = "No hay datos. Carga un XML primero.";
+                return View("CargarArchivo");
             }
 
-            // Llamamos al generador
             XmlSalida generador = new XmlSalida();
             string contenidoXml = generador.GenerarXml(servicio.ListaMensajes, servicio.ListaSistemas);
 
-            // Devolvemos el archivo para descargar
             byte[] bytes = System.Text.Encoding.UTF8.GetBytes(contenidoXml);
             return File(bytes, "application/xml", "salida.xml");
+        }
+
+        public IActionResult Ayuda()
+        {
+            return View();
         }
     }
 }

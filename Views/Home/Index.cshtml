@@ -1,44 +1,21 @@
-@{
-    ViewData["Title"] = "Inicio";
-}
-
-<h1>Cargar XML</h1>
-
-<form method="post" action="/Home/Cargar" enctype="multipart/form-data">
-    
-    <input type="file" name="archivo" />
-
-    <br /><br />
-
-    <button type="submit">Cargar</button>
-
-</form>
-
-<br /><br />
-
-<a href="/Dron">
-    <button type="button">Ver Drones</button>
-</a>
-
-<br /><br />
-
-<a href="/Sistema">
-    <button type="button">Ver Sistemas</button>
-</a>
-
-<br /><br />
-
-<a href="/Mensaje">
-    <button type="button">Ver Mensajes</button>
-</a>
-
-@if (ViewBag.Mensaje != null)
-{
-    <p>@ViewBag.Mensaje</p>
-}
-
-<br /><br />
-
-<a href="/Home/DescargarSalidaXml">
-    <button type="button">Generar archivo XML de salida</button>
-</a>
+@{ ViewData["Title"] = "Inicio"; }
+<div class="text-center">
+    <h1 class="display-4">Simulador de Sistemas de Drones</h1>
+    <p class="lead mt-4">
+        Este software permite la gestión y optimización de mensajes enviados a través de sistemas de drones coordinados.
+    </p>
+    <div class="row mt-5 text-start">
+        <div class="col-md-4">
+            <h5>Gestión de Sistemas</h5>
+            <p>Visualice la estructura de sus sistemas de drones mediante gráficas generadas con Graphviz.</p>
+        </div>
+        <div class="col-md-4">
+            <h5>Optimización</h5>
+            <p>Calcule el tiempo mínimo necesario para que los drones alcancen las alturas requeridas para cada mensaje.</p>
+        </div>
+        <div class="col-md-4">
+            <h5>Reportes XML</h5>
+            <p>Genere archivos de salida detallados con el estado segundo a segundo de cada dron en el sistema.</p>
+        </div>
+    </div>
+</div>
