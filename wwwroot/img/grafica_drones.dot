@@ -1,0 +1,10 @@
+digraph G {
+  node [shape=box, style=filled, fillcolor=lightskyblue, fontname="Arial"];
+  label="Estructura de Drones del Sistema";
+  labelloc="t";
+  dron1 [label="1. DronFuego"];
+  dron1 -> dron2;
+  dron2 [label="2. DronHumo"];
+  dron2 -> dron3;
+  dron3 [label="3. DronVapor"];
+}

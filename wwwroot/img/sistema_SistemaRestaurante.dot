@@ -1,0 +1,15 @@
+digraph G {
+  node [shape=none, fontname="Arial"];
+  tabla [label=<<table border='1' cellborder='1' cellspacing='0' cellpadding='4'>
+    <tr><td colspan='4'><b>Sistema SistemaRestaurante</b></td></tr>
+    <tr><td><b>Altura</b></td><td><b>DronFuego</b></td><td><b>DronHumo</b></td><td><b>DronVapor</b></td></tr>
+    <tr><td>1</td><td>A</td><td>B</td><td>A</td></tr>
+    <tr><td>2</td><td>C</td><td>D</td><td>H</td></tr>
+    <tr><td>3</td><td>E</td><td>F</td><td>J</td></tr>
+    <tr><td>4</td><td>I</td><td>G</td><td>K</td></tr>
+    <tr><td>5</td><td>L</td><td>L</td><td>M</td></tr>
+    <tr><td>6</td><td>O</td><td>N</td><td>Q</td></tr>
+    <tr><td>7</td><td>R</td><td>P</td><td>S</td></tr>
+    <tr><td>8</td><td>T</td><td>U</td><td>Z</td></tr>
+  </table>>];
+}

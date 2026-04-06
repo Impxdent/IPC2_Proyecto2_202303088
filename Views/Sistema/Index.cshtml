@@ -1,34 +1,69 @@
 @model IPC2_Proyecto2_202303088.Estructuras.ListaSimple
 
-<h1>Lista de Sistemas</h1>
-
-<table border="1">
-    <tr>
-        <th>Nombre</th>
-        <th>Altura Máxima</th>
-        <th>Acción</th>
-    </tr>
-
 @{
-    var actual = Model.ObtenerCabeza();
-
-    while (actual != null)
-    {
-        var sistema = (IPC2_Proyecto2_202303088.Modelos.SistemaDrones)actual.Dato;
-
-        <tr>
-            <td>@sistema.Nombre</td>
-            <td>@sistema.AlturaMaxima</td>
-            <td><a href="/Sistema/Detalle?nombre=@sistema.Nombre"><button>Ver Detalle</button></a></td>
-        </tr>
-
-        actual = actual.Siguiente;
-    }
+    ViewData["Title"] = "Gestión de Sistemas";
 }
-</table>
 
-<br /><br />
+<div class="container mt-4">
+    <h2 class="text-center mb-5 fw-bold">E. Gestión de Sistemas de Drones</h2>
 
-<a href="/Home">
-    <button type="button">Volver al Menú</button>
-</a>
+    @{
+        var actualSistema = Model.ObtenerCabeza();
+        int contadorSistema = 1;
+
+        while (actualSistema != null)
+        {
+            var sistema = (IPC2_Proyecto2_202303088.Modelos.SistemaDrones)actualSistema.Dato;
+
+            <div class="card mb-5 border-dark shadow-sm">
+                <div class="card-header bg-dark text-white py-3 text-center">
+                    <h4 class="mb-0">Sistema: @sistema.Nombre</h4>
+                </div>
+                <div class="card-body">
+                    
+                    <h5 class="mb-3 fw-bold"><i class="bi bi-table"></i> Información del Sistema</h5>
+                    <table class="table table-bordered text-center mb-4">
+                        <thead class="table-secondary">
+                            <tr>
+                                <th>#</th>
+                                <th>Nombre del Sistema</th>
+                                <th>Altura Máxima</th>
+                                <th>Cantidad de Drones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="fw-bold">@contadorSistema</td>
+                                <td>@sistema.Nombre</td>
+                                <td>@sistema.AlturaMaxima</td>
+                                <td>
+                                    @{
+                                        int cantDrones = 0;
+                                        var dContar = sistema.Drones.ObtenerCabeza();
+                                        while(dContar != null) { 
+                                            cantDrones++; 
+                                            dContar = dContar.Siguiente; 
+                                        }
+                                    }
+                                    @cantDrones
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h5 class="mb-3 fw-bold"><i class="bi bi-diagram-3"></i> Representación Gráfica</h5>
+                    <div class="text-center p-3 border bg-white shadow-sm overflow-auto">
+                        <img src="/img/sistema_@(sistema.Nombre).png?v=@DateTime.Now.Ticks" 
+                             alt="Gráfica del Sistema @sistema.Nombre" 
+                             class="img-fluid" 
+                             style="max-height: 600px;" />
+                    </div>
+
+                </div>
+            </div>
+
+            actualSistema = actualSistema.Siguiente;
+            contadorSistema++;
+        }
+    }
+</div>

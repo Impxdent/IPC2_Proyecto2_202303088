@@ -1,0 +1,13 @@
+digraph G {
+  rankdir=LR;
+  node [shape=box, style=filled, color=lightgreen];
+  M [label="Mensaje: MensajeSopa"];
+  I0 [label="DronRojo\nAlt: 3"];
+  M -> I0;
+  I1 [label="DronAzul\nAlt: 2"];
+  I0 -> I1;
+  I2 [label="DronAzul\nAlt: 3"];
+  I1 -> I2;
+  I3 [label="DronVerde\nAlt: 4"];
+  I2 -> I3;
+}

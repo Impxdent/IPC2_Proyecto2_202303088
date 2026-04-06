@@ -1,30 +1,91 @@
 @model IPC2_Proyecto2_202303088.Estructuras.ListaDrones
 
-<h1>Lista de Drones</h1>
-
-<table border="1">
-    <tr>
-        <th>Nombre</th>
-    </tr>
-
 @{
-    var actual = Model.ObtenerCabeza();
-
-    while (actual != null)
-    {
-        var dron = (IPC2_Proyecto2_202303088.Modelos.Dron)actual.Dato;
-
-        <tr>
-            <td>@dron.Nombre</td>
-        </tr>
-
-        actual = actual.Siguiente;
-    }
+    ViewData["Title"] = "Gestión de Drones";
 }
-</table>
+
+<div class="container mt-4">
+    <div class="text-center">
+        <h2 class="display-6 fw-bold mb-4">Gestión de drones</h2>
+    </div>
+
+    <div class="card shadow-sm mb-5 border-0">
+        <div class="card-header bg-secondary text-white fw-bold">
+            <i class="bi bi-diagram-3"></i> Representación gráfica de drones
+        </div>
+        <div class="card-body text-center bg-light">
+            @if (ViewBag.RutaGrafica != null)
+            {
+                <div class="p-3 bg-white border rounded shadow-sm d-inline-block">
+                    <img src="@ViewBag.RutaGrafica?v=@DateTime.Now.Ticks" 
+                         alt="Gráfica de Drones" 
+                         class="img-fluid" 
+                         style="max-height: 400px;" />
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-info border-info">
+                    <i class="bi bi-info-circle me-2"></i> Cargue un archivo XML para generar la visualización estructural de los drones.
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            <h5 class="mb-0"><i class="bi bi-list-ol me-2"></i> Listado de Drones Registrados</h5>
+        </div>
+        <div class="card-body p-0">
+            <table class="table table-hover mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th class="text-center" style="width: 80px;">#</th>
+                        <th>Nombre del Dron</th>
+                        <th class="text-center">Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        var actual = Model.ObtenerCabeza();
+                        int contador = 1;
+
+                        if (actual == null)
+                        {
+                            <tr>
+                                <td colspan="3" class="text-center py-4 text-muted">
+                                    No hay drones cargados en el sistema.
+                                </td>
+                            </tr>
+                        }
+
+                        while (actual != null)
+                        {
+                            var dron = (IPC2_Proyecto2_202303088.Modelos.Dron)actual.Dato;
+
+                            <tr>
+                                <td class="text-center fw-bold text-primary border-end">
+                                    @contador
+                                </td>
+                                <td class="ps-4">
+                                    <span class="fw-semibold">@dron.Nombre</span>
+                                </td>
+                                <td class="text-center">
+                                    <span class="fw-semibold">Activo</span>
+                                </td>
+                            </tr>
+
+                            actual = actual.Siguiente;
+                            contador++;
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer bg-white text-muted small text-end">
+            Total de unidades detectadas: @(contador - 1)
+        </div>
+    </div>
+</div>
 
 <br /><br />
-
-<a href="/Home">
-    <button type="button">Volver al Menú</button>
-</a>
