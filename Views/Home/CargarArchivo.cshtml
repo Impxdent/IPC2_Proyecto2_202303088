@@ -5,6 +5,6 @@
     @if (ViewBag.Mensaje != null) { <div class="alert alert-success">@ViewBag.Mensaje</div> }
     <form method="post" action="/Home/ProcesarArchivo" enctype="multipart/form-data" class="mt-4 mx-auto" style="max-width: 500px;">
         <input type="file" name="archivo" class="form-control mb-3" required />
-        <button type="submit" class="btn btn-primary w-100">Procesar Archivo</button>
+        <button type="submit" class="btn btn-primary w-100">Cargar</button>
     </form>
 </div>

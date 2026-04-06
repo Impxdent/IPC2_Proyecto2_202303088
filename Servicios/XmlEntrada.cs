@@ -39,7 +39,6 @@ namespace IPC2_Proyecto2_202303088.Servicios
             foreach (XmlNode dronNode in nodoDrones.SelectNodes("dron"))
             {
                 string nombre = dronNode.InnerText.Trim();
-                Console.WriteLine("Dron leído: " + nombre);
                 Dron dron = new Dron(nombre);
 
                 ListaDronesGlobal.InsertarDron(dron);
